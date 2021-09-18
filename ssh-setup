@@ -1,0 +1,20 @@
+To generate a new key use:
+ssh-keygen -t rsa -b 4096 -C "tom.flaherty03@gmail.com"
+           [type] [bytes] [your email]
+
+Let it save in the default folder (just press enter when it asks)
+
+If you are sure that no-one else will get your key, then you can get away 
+with not setting a passphrase
+But if you use a passphrase, some automated things might not work properly
+
+Anyway! Add the ssh key to your computer using:
+ssh-add ~/.ssh/id_rsa
+
+To view your ssh key (you'll need to get it into your clipboard):
+cat ~/.ssh/id_rsa.pub
+
+And add the ssh key to git:
+https://github.com/settings/keys
+
+Title it with the name of the device you created the ssh key on
