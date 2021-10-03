@@ -1,3 +1,7 @@
+This is already not correct, use this 
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+and ssh add similar to below
+
 To generate a new key use:
 ssh-keygen -t rsa -b 4096 -C "tom.flaherty03@gmail.com"
            [type] [bytes] [your email]
@@ -10,9 +14,11 @@ But if you use a passphrase, some automated things might not work properly
 
 Anyway! Add the ssh key to your computer using:
 ssh-add ~/.ssh/id_rsa
+This might need a pub on the end
 
 To view your ssh key (you'll need to get it into your clipboard):
 cat ~/.ssh/id_rsa.pub
+Don't forget the pub
 
 And add the ssh key to git:
 https://github.com/settings/keys
