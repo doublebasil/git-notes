@@ -1,26 +1,12 @@
-This is already not correct, use this 
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-and ssh add similar to below
+Create the key:
+           ssh-keygen -t ed25519 -C "your-email@example.com"
+You need a passphrase for github
 
-To generate a new key use:
-ssh-keygen -t rsa -b 4096 -C "tom.flaherty03@gmail.com"
-           [type] [bytes] [your email]
+Add the key to your pc:
+           ssh-add ~/.ssh/id_ed25519
 
-Let it save in the default folder (just press enter when it asks)
-
-If you are sure that no-one else will get your key, then you can get away 
-with not setting a passphrase
-But if you use a passphrase, some automated things might not work properly
-
-Anyway! Add the ssh key to your computer using:
-ssh-add ~/.ssh/id_rsa
-This might need a pub on the end
-
-To view your ssh key (you'll need to get it into your clipboard):
-cat ~/.ssh/id_rsa.pub
-Don't forget the pub
-
-And add the ssh key to git:
-https://github.com/settings/keys
-
-Title it with the name of the device you created the ssh key on
+Add the key to github:
+Copy the output of the following
+           cat ~/.ssh/id_ed25519.pub
+And add it as a new ssh key here
+github.com/settings/keys
